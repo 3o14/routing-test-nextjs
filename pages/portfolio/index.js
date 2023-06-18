@@ -12,7 +12,10 @@ function PortfolioPage() {
   console.log(router);
 
   function loadProjectHandler() {
-    router.push("portfolio/placeqr");
+    router.push({
+        pathname: "/portfolio/[id]/[projectId]",
+        query: {id: 'placeqr', projectId: "1"}
+    });
   }
 
   return (
