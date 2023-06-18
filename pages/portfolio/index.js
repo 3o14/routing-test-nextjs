@@ -17,7 +17,10 @@ function PortfolioPage() {
       <ul>
         {projects.map((project) => (
           <li key={project.id}>
-            <Link href={`portfolio/${project.id}`}>{project.name}</Link>
+            <Link href={{
+                pathname: "portfolio/[id]",
+                query: { id: project.id},
+            }}>{project.name}</Link>
           </li>
         ))}
       </ul>
