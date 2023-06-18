@@ -2,18 +2,24 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 function PortfolioPage() {
-    const router = useRouter();
+  const projects = [
+    { id: "placeQR", name: "Place.QR : QR코드 방명록 애플리케이션" },
+    { id: "wooyeons", name: "우연한 발견: 위치기반 지도 익명 SNS" },
+    { id: "carmeet", name: "카밋(carmmet): 랜덤 화상 통화 서비스" },
+  ];
+
+  const router = useRouter();
   console.log(router);
+
   return (
     <div>
-      <h1>This is Portfolio Page.</h1>
+      <h1>The Portfolio Page.</h1>
       <ul>
-        <li>
-          <Link href="/portfolio/project1">Project1</Link>
-        </li>
-        <li>
-          <Link href="/portfolio/project2">Project2</Link>
-        </li>
+        {projects.map((project) => (
+          <li key={project.id}>
+            <Link href={`portfolio/${project.id}`}>{project.name}</Link>
+          </li>
+        ))}
       </ul>
     </div>
   );
