@@ -1,9 +1,12 @@
-function HomePage() {
+import Seo from "../components/Seo";
+
+function Home() {
   return (
     <div>
-      <h1>This is Home Page.</h1>
+      <Seo title="Home" />
+      <h1 className="active">This is Home Page.</h1>
     </div>
   );
 }
 
-export default HomePage;
+export default Home;
